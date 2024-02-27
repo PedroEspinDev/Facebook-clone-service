@@ -1,11 +1,11 @@
 package com.dailycodebuffer.facebookclone.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "posts")
@@ -16,6 +16,8 @@ import lombok.NoArgsConstructor;
 
 public class PostEntity {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
     private String post;
